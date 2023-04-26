@@ -306,8 +306,6 @@ local frecency = function(opts)
   local buffer = state.picker.prompt_bufnr
   vim.api.nvim_buf_set_option(buffer, "filetype", "frecency")
   vim.api.nvim_buf_set_option(buffer, "completefunc", "v:lua.require'telescope'.extensions.frecency.complete")
-  vim.keymap.set("i", "<Tab>", "pumvisible() ? '<C-n>' : '<C-x><C-u>'", { buffer = buffer, expr = true })
-  vim.keymap.set("i", "<S-Tab>", "pumvisible() ? '<C-p>' : ''", { buffer = buffer, expr = true })
 end
 
 local function set_config_state(opt_name, value, default)
